@@ -1,24 +1,22 @@
 
-void main(List<String> args) {
-}
+void main() {
+  BigInt second = BigInt.one; 
+  BigInt first = BigInt.one; 
 
-String number1 = "10";
-String number2 = "223";
+  int index = 2; 
 
 
-void sum(String num1, String num2) {
-  String bigNumber;
+  while (true) {
+    index++; 
 
-  if (num1.length>num2.length) {
-    bigNumber=num1;
-  } else {
-    bigNumber=num2;
-  }
+    BigInt temp = first + second;
 
-  int digit1;
-  int digit2;
-  for (var i = bigNumber.length-1; i>-1; i--) {
-    digit1 = int.parse(num1[i]);
-    
+    second = first;
+    first = temp;
+
+    if (first.toString().length >= 1000) {
+      print(index);
+      break; 
+    }
   }
 }
